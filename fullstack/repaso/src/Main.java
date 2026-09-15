@@ -14,6 +14,8 @@ public class Main {
             System.out.println("Inserte 0 para salir");
 
             int seleccion = sc.nextInt();
+            sc.nextLine();
+
             if (seleccion == 0){break;}
             if (seleccion < 0 || seleccion > 2){System.out.println("No existe esta opcion escogida");}
 
@@ -30,8 +32,7 @@ public class Main {
 
             }
         }
-
-
+        sc.close();
     }
 
     public void gestionDeUsuarios(Scanner sc, ArrayList usuarios){
@@ -39,12 +40,11 @@ public class Main {
         System.out.println("Selecciona 2 para agregar un nuevo usuario");
 
         int seleccion2 = sc.nextInt();
-        if (seleccion2 < 1 || seleccion2 > 2){System.out.println("No existe esta opcion escogida");}
+        if (seleccion2 < 1 || seleccion2 > 2){System.out.println("No existe esta opcion escogida\n" );}
         sc.nextLine();
 
         if (seleccion2 == 1){
-            System.out.println("Los usuarios guardados son: " + usuarios);
-            System.out.println();
+            System.out.println("Los usuarios guardados son: " + usuarios + "\n");
         }
 
         else if (seleccion2 == 2){
@@ -52,6 +52,5 @@ public class Main {
             String nombre = sc.nextLine();
             usuarios.add(nombre);
         }
-
     }
 }
